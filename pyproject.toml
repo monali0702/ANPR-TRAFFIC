@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anpr-trajectory-platform"
+version = "0.1.0"
+description = "AI-based city-wide ANPR and traffic analytics platform"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "ANPR-Trajectory-Platform Team" }]
+license = { text = "MIT" }
+keywords = ["anpr", "traffic", "cv", "ml", "fastapi", "analytics"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Framework :: FastAPI",
+  "Framework :: Pydantic",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "pytest-cov>=6.0.0",
+  "ruff>=0.8.0",
+  "mypy>=1.13.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
